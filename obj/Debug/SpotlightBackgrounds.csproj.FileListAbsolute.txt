@@ -1,0 +1,6 @@
+C:\Users\Thor\Documents\GitHub\SpotlightBackgrounds\bin\Debug\SpotlightBackgrounds.exe.config
+C:\Users\Thor\Documents\GitHub\SpotlightBackgrounds\bin\Debug\SpotlightBackgrounds.exe
+C:\Users\Thor\Documents\GitHub\SpotlightBackgrounds\bin\Debug\SpotlightBackgrounds.pdb
+C:\Users\Thor\Documents\GitHub\SpotlightBackgrounds\obj\Debug\SpotlightBackgrounds.csprojResolveAssemblyReference.cache
+C:\Users\Thor\Documents\GitHub\SpotlightBackgrounds\obj\Debug\SpotlightBackgrounds.exe
+C:\Users\Thor\Documents\GitHub\SpotlightBackgrounds\obj\Debug\SpotlightBackgrounds.pdb

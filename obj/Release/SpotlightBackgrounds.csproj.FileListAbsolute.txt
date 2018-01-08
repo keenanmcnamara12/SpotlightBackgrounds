@@ -1,0 +1,5 @@
+C:\Users\Thor\Documents\GitHub\SpotlightBackgrounds\bin\Release\SpotlightBackgrounds.exe.config
+C:\Users\Thor\Documents\GitHub\SpotlightBackgrounds\bin\Release\SpotlightBackgrounds.exe
+C:\Users\Thor\Documents\GitHub\SpotlightBackgrounds\bin\Release\SpotlightBackgrounds.pdb
+C:\Users\Thor\Documents\GitHub\SpotlightBackgrounds\obj\Release\SpotlightBackgrounds.exe
+C:\Users\Thor\Documents\GitHub\SpotlightBackgrounds\obj\Release\SpotlightBackgrounds.pdb
