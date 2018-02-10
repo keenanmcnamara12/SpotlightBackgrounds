@@ -4,20 +4,18 @@ Sick of finding good backgrounds yourself when you already know that the windows
 # Background
 This application allows for a user to ad-hoc copy the windows lock screen backgrounds into a specified directory that can be used as a desktop background. Additionally, one can set up a windows task to periodically pull updates from the lock screen background folder as it's updated. An app data file is used to specify where the images should be saved (background folder).
 
-# How to (one time)
-1st - run the .exe. This will create a "SpotlightBackground" directory and "preferences.txt" file at your app data path, which looks something like: "C:\Users\<User>\AppData\Roaming\SpotlightBackground\preferences.txt"
+# How to 
+1. Download the .msi here: https://github.com/keenanmcnamara12/SpotlightBackgrounds/blob/master/SpotlightBackgroundsInstaller/Release/SpotlightBackgroundsInstaller.msi
+2. Run the installer.
+3. You'll see a shortcut on your desktop "Spotlight to Background".
+4. Double click on the shortcut.
+5. Choose the directory you want the Spotlight images to be saved to.
+6. Make sure the resolution matches that of your primary monitor - update if necessary.
+7. Cick run to perform the first copy!
+8. Open your background directory and verify there are images now.
+9. Optional - consider clicking the "Sched" button to have this application run in the background once per day to add new backgrounds to your folder.
 
-2nd - navigate to the preferenes.txt file where you want the backgrounds to be saved (folder should already exist). Ex: "BackgroundFolderPath=C:\Users\<User>\Pictures\Backgrounds\SlideShow\
+# Additional details
+A file with the background directory and pixel dimensions is saved in "C:\Users\<User>\AppData\Roaming\SpotlightBackground\preferences.txt"
 
-3rd - still in the preferences.txt file, set the minimum pixel resolution that you want to copy over. Ex: MinPixelHeight=1080 and MinPixelWidth=1920
-
-4th - still in the preferences.txt file, verify that your settings are in the following order and on separate lines BackgroundFolderPath, MinPixelHeight, MinPixelWidth.
-
-5th - if step 4 checks out save preferences.txt and close.
-
-6th - run the .exe and you should see images populate your specified folder.
-
-7th - verify that your windows background is in slide show mode an pointing to the directory you created (or reused) in step 2.
-
-# How to (continual updates)
-Set up a windows task that runs this application daily to continue to add to new backgrounds to your folder (details here: https://technet.microsoft.com/en-us/library/cc748993(v=ws.11).aspx)
+Details on windows tasks can be found here: https://technet.microsoft.com/en-us/library/cc748993(v=ws.11).aspx)
