@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace SpotlightBackgrounds
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             UserSettings us = new UserSettings();
             string userBackgroundDirectory = us.getBackgroundFolderPath();
@@ -48,7 +48,7 @@ namespace SpotlightBackgrounds
         }
 
         // https://stackoverflow.com/questions/772388/c-sharp-how-can-i-test-a-file-is-a-jpeg
-        // Users the magic number in jpeg to verify the file type
+        // Uses the magic number in jpeg to verify the file type
         static bool hasJpegHeader(string fileName)
         {
             using (BinaryReader br = new BinaryReader(File.Open(fileName, FileMode.Open)))

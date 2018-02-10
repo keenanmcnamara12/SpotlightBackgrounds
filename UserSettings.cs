@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SpotlightBackgrounds
 {
-    class UserSettings
+    public class UserSettings
     {
         /// <summary>
         /// Path to the application data file
@@ -17,17 +17,22 @@ namespace SpotlightBackgrounds
         /// <summary>
         /// Setting for the where the backgrounds are stored
         /// </summary>
-        private string _backgroundFolderPath;
+        public string BackgroundFolderPath { get; set; }
 
         /// <summary>
         /// Setting for the minimum pixel height
         /// </summary>
-        private int _minPixelHeight;
+        public int MinPixelHeight { get; set; }
 
         /// <summary>
         /// Setting for the minimum pixel height
         /// </summary>
-        private int _minPixelWidth;
+        public int MinPixelWidth { get; set; }
+
+        private const string BackgroundFolderPathToken = "BackgroundFolderPath";
+        private const string MinPixelHeightToken = "MinPixelHeight";
+        private const string MinPixelWidthToken = "MinPixelWidth";
+        private const char Delim = '=';
 
 
         public UserSettings()
@@ -38,36 +43,36 @@ namespace SpotlightBackgrounds
                 using (StreamReader sr = new StreamReader(_path))
                 {
                     string line = sr.ReadLine();
-                    if (line.Contains("BackgroundFolderPath="))
+                    if (line.Contains(BackgroundFolderPathToken + Delim))
                     {
-                        string[] sides = line.Split('=');
+                        string[] sides = line.Split(Delim);
                         string potentialDirectory = sides[1];
                         if (Directory.Exists(potentialDirectory))
-                            _backgroundFolderPath = potentialDirectory;
+                            BackgroundFolderPath = potentialDirectory;
                         else
-                            _backgroundFolderPath = null;
+                            BackgroundFolderPath = null;
                     }
 
                     line = sr.ReadLine();
-                    if (line.Contains("MinPixelHeight="))
+                    if (line.Contains(MinPixelHeightToken + Delim))
+                    {
+                        string[] sides = line.Split(Delim);
+                        int pixels = Int32.Parse(sides[1]);
+                        if (pixels > 0)
+                            MinPixelHeight = pixels;
+                        else
+                            MinPixelHeight = 1080;
+                    }
+
+                    line = sr.ReadLine();
+                    if (line.Contains(MinPixelWidthToken + Delim))
                     {
                         string[] sides = line.Split('=');
                         int pixels = Int32.Parse(sides[1]);
                         if (pixels > 0)
-                            _minPixelHeight = pixels;
+                            MinPixelWidth = pixels;
                         else
-                            _minPixelHeight = 1920;
-                    }
-
-                    line = sr.ReadLine();
-                    if (line.Contains("MinPixelWidth="))
-                    {
-                        string[] sides = line.Split('=');
-                        int pixels = Int32.Parse(sides[1]);
-                        if (pixels > 0)
-                            _minPixelWidth = pixels;
-                        else
-                            _minPixelWidth = 1080;
+                            MinPixelWidth = 1920;
                     }
 
                 }
@@ -84,11 +89,11 @@ namespace SpotlightBackgrounds
                 // create the file (this is the first time the application has been run I guess)
                 using (StreamWriter sw = File.AppendText(_path))
                 {
-                    sw.WriteLine("BackgroundFolderPath=");
-                    sw.WriteLine("MinPixelHeight=");
-                    sw.WriteLine("MinPixelWidth=");
+                    sw.WriteLine(BackgroundFolderPathToken + Delim);
+                    sw.WriteLine(MinPixelHeightToken + Delim);
+                    sw.WriteLine(MinPixelWidthToken + Delim);
                 }
-                _backgroundFolderPath = null;
+                BackgroundFolderPath = null;
             }
         }
 
@@ -98,17 +103,34 @@ namespace SpotlightBackgrounds
         /// <returns>A valid directory or null.</returns>
         public string getBackgroundFolderPath()
         {
-            return _backgroundFolderPath;
+            return BackgroundFolderPath;
         }
 
         public int getMinPixelHeight()
         {
-            return _minPixelHeight;
+            return MinPixelHeight;
         }
 
         public int getMinPixelWidth()
         {
-            return _minPixelWidth;
+            return MinPixelWidth;
+        }
+
+        /// <summary>
+        /// Committ current property values to the AppData file.
+        /// </summary>
+        /// <returns>True - on success. False otherwise.</returns>
+        public Boolean saveUserSettings()
+        {
+            Console.WriteLine("User settings saving!");
+            using (StreamWriter sw = new StreamWriter(_path, false))
+            {
+                sw.WriteLine(BackgroundFolderPathToken + Delim + BackgroundFolderPath);
+                sw.WriteLine(MinPixelHeightToken + Delim + MinPixelHeight);
+                sw.WriteLine(MinPixelWidthToken + Delim + MinPixelWidth);
+            }
+
+            return true;
         }
     }
 }

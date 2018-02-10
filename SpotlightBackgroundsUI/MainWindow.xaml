@@ -1,0 +1,34 @@
+﻿<Window x:Class="SpotlightBackgroundsUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SpotlightBackgroundsUI"
+        mc:Ignorable="d"
+        Title="Spotlight to Backgrounds" Height="350" Width="729.341" ResizeMode="NoResize">
+    <Grid>
+        <Grid HorizontalAlignment="Left" Height="301" Margin="10,10,0,0" VerticalAlignment="Top" Width="703" RenderTransformOrigin="0.424,0.507">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="lbl_BackgroundPath" Content="Background Path:" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center"/>
+            <Label x:Name="lbl_Dimension" Content="Dimensions (ex: 1920 x 1080):" HorizontalAlignment="Center" Margin="0" Grid.Row="1" VerticalAlignment="Center"/>
+            <Label x:Name="lbl_RunOptions" Content="Run options:" HorizontalAlignment="Center" Margin="0" Grid.Row="2" VerticalAlignment="Center"/>
+            <TextBox x:Name="txt_YDimension" PreviewTextInput="NumberValidationTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="194,40,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="70" TextChanged="txt_YDimension_TextChanged"/>
+            <TextBox x:Name="txt_XDimension" PreviewTextInput="NumberValidationTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="98,40,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="70" TextChanged="txt_XDimension_TextChanged"/>
+            <Label x:Name="lbl_X" Content="x" Grid.Column="1" HorizontalAlignment="Left" Margin="173,38,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+            <TextBox x:Name="txt_BackgroundDirectory" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,40,0,0" TextWrapping="Wrap" Text="Choose a directory" VerticalAlignment="Top" Width="306" IsReadOnly="True" TextChanged="txt_BackgroundDirectory_TextChanged"/>
+            <Button x:Name="btn_BackgroundDirectoryChooser" Content="..." Grid.Column="1" HorizontalAlignment="Left" Margin="321,40,0,0" VerticalAlignment="Top" Width="20" Click="btn_BackgroundDirectoryChooser_Click"/>
+            <Button x:Name="btn_RunOnce" Content="Run" Grid.Column="1" HorizontalAlignment="Left" Margin="63,44,0,0" Grid.Row="2" VerticalAlignment="Top" Width="75" ToolTip="Copy files from the SpotLight directory once (right now)." Click="btn_RunOnce_Click"/>
+            <Button x:Name="btn_ScheduleTask" Content="Sched Task" Grid.Column="1" HorizontalAlignment="Left" Margin="143,44,0,0" Grid.Row="2" VerticalAlignment="Top" Width="75" ToolTip="Schedule a task to periodically copy Spotligh images to your background directory." Click="btn_ScheduleTask_Click"/>
+            <Button x:Name="btn_unScheduleTask" Content="Unsched Task" Grid.Column="1" HorizontalAlignment="Left" Margin="223,44,0,0" Grid.Row="2" VerticalAlignment="Top" Width="75" Click="btn_unScheduleTask_Click"/>
+        </Grid>
+
+    </Grid>
+</Window>
