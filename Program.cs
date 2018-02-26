@@ -25,6 +25,10 @@ namespace SpotlightBackgrounds
             if (!Directory.Exists(spotlightDirectory))
                 return;
 
+            // Verify access to the write directory
+            if (!hasWriteAccessToFolder(userBackgroundDirectory))
+                return;
+
             string[] spotlightFiles = Directory.GetFiles(spotlightDirectory);
             string[] backgroundFiles = Directory.GetFiles(userBackgroundDirectory);
 
@@ -41,8 +45,16 @@ namespace SpotlightBackgrounds
                     System.Drawing.Image img = System.Drawing.Image.FromFile(spotlightFiles[i]);
                     if ((img.Width < us.getMinPixelWidth()) || (img.Height < us.getMinPixelHeight()))
                         continue;
+                    try
+                    {
+                        File.Copy(spotlightFiles[i], userBackgroundDirectory + "\\" + getFileName(spotlightFiles[i]) + ".jpg", true);
+                    }
+                    catch
+                    {
+                        // probably doesn't have write permissions, so break the loop
+                        break;
+                    }
 
-                    File.Copy(spotlightFiles[i], userBackgroundDirectory + "\\" + getFileName(spotlightFiles[i]) + ".jpg", true);
                 }
             }
         }
@@ -63,6 +75,21 @@ namespace SpotlightBackgrounds
         {
             string[] tmp = filePath.Split('\\');
             return tmp[tmp.Length - 1];
+        }
+
+        public static bool hasWriteAccessToFolder(string folderPath)
+        {
+            try
+            {
+                // Attempt to get a list of security permissions from the folder. 
+                // This will raise an exception if the path is read only or do not have access to view the permissions. 
+                System.Security.AccessControl.DirectorySecurity ds = Directory.GetAccessControl(folderPath);
+                return true;
+            }
+            catch (UnauthorizedAccessException)
+            {
+                return false;
+            }
         }
     }
 }

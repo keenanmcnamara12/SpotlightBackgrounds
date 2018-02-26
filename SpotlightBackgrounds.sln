@@ -5,9 +5,9 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpotlightBackgrounds", "SpotlightBackgrounds.csproj", "{5F41FE3B-0DE8-4089-A31A-A192E8F18849}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SpotlightBackgroundsInstaller", "..\SpotlightBackgroundsInstaller\SpotlightBackgroundsInstaller.vdproj", "{A5759828-4B69-4C84-964E-D3C3C2781069}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpotlightBackgroundsUI", "SpotlightBackgroundsUI\SpotlightBackgroundsUI.csproj", "{9D70CC92-CB2E-4C5F-98E2-DD9EA4CF9A7F}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SpotlightBackgroundsInstaller", "SpotlightBackgroundsInstaller\SpotlightBackgroundsInstaller.vdproj", "{97945DAB-FB9B-42B5-8B3F-44981BBBCE32}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,13 +19,14 @@ Global
 		{5F41FE3B-0DE8-4089-A31A-A192E8F18849}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F41FE3B-0DE8-4089-A31A-A192E8F18849}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F41FE3B-0DE8-4089-A31A-A192E8F18849}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A5759828-4B69-4C84-964E-D3C3C2781069}.Debug|Any CPU.ActiveCfg = Debug
-		{A5759828-4B69-4C84-964E-D3C3C2781069}.Release|Any CPU.ActiveCfg = Release
-		{A5759828-4B69-4C84-964E-D3C3C2781069}.Release|Any CPU.Build.0 = Release
 		{9D70CC92-CB2E-4C5F-98E2-DD9EA4CF9A7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9D70CC92-CB2E-4C5F-98E2-DD9EA4CF9A7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D70CC92-CB2E-4C5F-98E2-DD9EA4CF9A7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D70CC92-CB2E-4C5F-98E2-DD9EA4CF9A7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97945DAB-FB9B-42B5-8B3F-44981BBBCE32}.Debug|Any CPU.ActiveCfg = Debug
+		{97945DAB-FB9B-42B5-8B3F-44981BBBCE32}.Debug|Any CPU.Build.0 = Debug
+		{97945DAB-FB9B-42B5-8B3F-44981BBBCE32}.Release|Any CPU.ActiveCfg = Release
+		{97945DAB-FB9B-42B5-8B3F-44981BBBCE32}.Release|Any CPU.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

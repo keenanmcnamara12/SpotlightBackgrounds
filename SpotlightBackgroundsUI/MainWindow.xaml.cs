@@ -55,8 +55,18 @@ namespace SpotlightBackgroundsUI
             {
                 if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    txt_BackgroundDirectory.Text = dialog.SelectedPath;
-                    settings.BackgroundFolderPath = dialog.SelectedPath;
+                    // Verify user has write access to the directory. If so, save the path!
+                    // This isn't a gaurentee depeding on how the program is being run and
+                    // if there are any possible changes in permissions.
+                    if (!Program.hasWriteAccessToFolder(dialog.SelectedPath))
+                    {
+                        System.Windows.MessageBox.Show("Invalid directory, you don't have appropriate permissions. Choose another directory.", "Invalid Direcory");
+                    }
+                    else
+                    {
+                        txt_BackgroundDirectory.Text = dialog.SelectedPath;
+                        settings.BackgroundFolderPath = dialog.SelectedPath;
+                    }
                 }
             }
         }

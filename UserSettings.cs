@@ -122,7 +122,7 @@ namespace SpotlightBackgrounds
         /// <returns>True - on success. False otherwise.</returns>
         public Boolean saveUserSettings()
         {
-            Console.WriteLine("User settings saving!");
+            // Console.WriteLine("User settings saving!");
             using (StreamWriter sw = new StreamWriter(_path, false))
             {
                 sw.WriteLine(BackgroundFolderPathToken + Delim + BackgroundFolderPath);
