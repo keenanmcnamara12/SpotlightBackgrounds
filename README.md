@@ -1,5 +1,6 @@
 # SpotlightBackgrounds
-Sick of finding good backgrounds yourself when you already know that the windows lock screen has beautiful images and would be happy to see them when you don't have 9001 windows open? Me too!
+Have you ever woken your Windows 10 computer and been awestruck by the beautiful images displayed on the lock screen? Bringing the beauty of the lock screen to the desktop is the inspiration for this application.
+![Inspiration](https://github.com/keenanmcnamara12/SpotlightBackgrounds/blob/master/WindowsSpotlightLookingGreat.jpg)
 
 # Background
 This application allows for a user to ad-hoc copy the windows lock screen backgrounds into a specified directory that can be used as a desktop background. Additionally, one can set up a windows task to periodically pull updates from the lock screen background folder as it's updated. An app data file is used to specify where the images should be saved (background folder).
